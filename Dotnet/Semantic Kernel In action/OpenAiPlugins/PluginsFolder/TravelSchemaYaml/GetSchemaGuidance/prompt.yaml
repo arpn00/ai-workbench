@@ -1,0 +1,63 @@
+name: GetSchemaGuidance
+description: Builds concise planning guidance from a travel JSON schema and user preferences.
+template: |
+  You are a travel policy helper.
+
+  Use this JSON schema and user input to produce concrete planning constraints that will strongly shape the final itinerary.
+  Focus on practical, enforceable guidance instead of generic travel advice.
+
+  Schema JSON:
+  {{$schemaJson}}
+
+  User input:
+  - Destination: {{$destination}}
+  - Days: {{$days}}
+  - Budget: {{$budget}}
+  - Travel style: {{$style}}
+
+  Tasks:
+  1. Infer a budget band (low/medium/high) from the budget text.
+  2. Check whether the requested number of days is realistic against the schema limits.
+  3. Convert schema constraints into concrete rules the itinerary generator should follow.
+  4. Provide indoor alternatives for bad weather based on the schema weather policy.
+  5. Make the guidance specific enough to change activity mix, pacing, and spending level.
+
+  Output format:
+  Budget Band:
+  - <low|medium|high>
+  Trip Feasibility:
+  - <short verdict about requested days and realism>
+  Required Rules:
+  - <rule 1>
+  - <rule 2>
+  - <rule 3>
+  Bad Weather Fallbacks:
+  - <fallback 1>
+  - <fallback 2>
+
+  Rules for writing guidance:
+  - Keep rules directive and specific.
+  - Mention spending level, pacing, and activity style.
+  - Do not repeat the raw schema JSON.
+  - Do not write a full itinerary.
+input_variables:
+  - name: schemaJson
+    description: The JSON schema text for travel planning constraints.
+    is_required: true
+  - name: destination
+    description: Destination city or country.
+    is_required: true
+  - name: days
+    description: Trip duration in days.
+    is_required: true
+  - name: budget
+    description: Budget string from user input.
+    is_required: true
+  - name: style
+    description: Travel style from user input.
+    is_required: true
+execution_settings:
+  default:
+    temperature: 0.2
+    max_tokens: 350
+    top_p: 0.0

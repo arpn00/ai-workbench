@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TravelPlanConstraints",
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "string",
+      "minLength": 2
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 14
+    },
+    "budgetBand": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "style": {
+      "type": "string",
+      "enum": ["relaxed", "adventure", "culture", "family", "mixed"]
+    },
+    "weatherPolicy": {
+      "type": "object",
+      "properties": {
+        "avoidOutdoorIn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fallbackPlan": {
+          "type": "string"
+        }
+      },
+      "required": ["avoidOutdoorIn", "fallbackPlan"]
+    }
+  },
+  "required": ["destination", "days", "budgetBand", "style", "weatherPolicy"]
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Builds concise planning guidance from a travel JSON schema and user preferences.",
+  "completion": {
+    "max_tokens": 350,
+    "temperature": 0.2,
+    "top_p": 0.0
+  },
+  "input": {
+    "parameters": [
+      {
+        "name": "schemaJson",
+        "description": "The JSON schema text for travel planning constraints.",
+        "defaultValue": ""
+      },
+      {
+        "name": "destination",
+        "description": "Destination city or country.",
+        "defaultValue": ""
+      },
+      {
+        "name": "days",
+        "description": "Trip duration in days.",
+        "defaultValue": ""
+      },
+      {
+        "name": "budget",
+        "description": "Budget string from user input.",
+        "defaultValue": ""
+      },
+      {
+        "name": "style",
+        "description": "Travel style from user input.",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
