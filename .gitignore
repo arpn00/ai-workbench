@@ -1,0 +1,91 @@
+# =========================
+# Build artifacts
+# =========================
+bin/
+obj/
+out/
+publish/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Rider / VS Code
+# =========================
+.idea/
+.vscode/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# =========================
+# Test results
+# =========================
+TestResults/
+*.trx
+
+# =========================
+# Azure Functions (important for you)
+# =========================
+local.settings.json
+bin/
+obj/
+
+# =========================
+# Publish / deployment
+# =========================
+*.publishsettings
+*.azurePubxml
+*.pubxml
+*.pubxml.user
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+secrets.json
+
+# =========================
+# Coverage / tools
+# =========================
+coverage/
+*.coverage
+*.coveragexml
+
+# =========================
+# Resharper / analyzers
+# =========================
+_ReSharper*/
+*.DotSettings.user
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
