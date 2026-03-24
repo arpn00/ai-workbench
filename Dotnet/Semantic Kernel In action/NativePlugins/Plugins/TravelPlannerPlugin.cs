@@ -35,7 +35,10 @@ public sealed class TravelPlannerPlugin
         int budgetInr,
 
         // SK injects the Kernel automatically — this is what lets us call the LLM from inside the plugin.
-        Kernel kernel)
+        Kernel kernel,
+
+        [Description("Converted budget summary from CurrencyConverter, e.g. 'INR 150,000 ≈ EUR 1,650'")]
+        string? convertedBudgetContext = null)
     {
         // ── Part 1: C# — arithmetic only, instant, zero LLM tokens ──────────
         double dailyInr = Math.Round((double)budgetInr / days, 0);
@@ -43,20 +46,22 @@ public sealed class TravelPlannerPlugin
         // ── Part 2: LLM — feasibility judgement using world knowledge ────────
         const string feasibilityPrompt = """
             A traveller has a daily budget of INR {{$daily}} for a trip to {{$destination}}.
+            Converted budget context: {{$convertedBudgetContext}}
             Is this budget realistically feasible for a basic but comfortable trip?
 
             Reply in EXACTLY this format (one line only):
-            FEASIBLE: <one sentence reason>
+            FEASIBLE: with valid reasons
             or
-            NOT_FEASIBLE: <one sentence reason>
+            NOT_FEASIBLE: with valid reasons
             """;
 
         var result = await kernel.InvokeAsync(
             kernel.CreateFunctionFromPrompt(feasibilityPrompt),
             new KernelArguments
             {
-                ["daily"]       = dailyInr,
-                ["destination"] = destination,
+                ["daily"]                  = dailyInr,
+                ["destination"]            = destination,
+                ["convertedBudgetContext"] = convertedBudgetContext ?? "Not provided",
             });
 
         return result.GetValue<string>()?.Trim() ?? "NOT_FEASIBLE: Could not determine feasibility.";

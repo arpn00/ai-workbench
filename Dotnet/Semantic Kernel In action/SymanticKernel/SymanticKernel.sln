@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Common", "Demo.Common\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativePlugins", "..\NativePlugins\NativePlugins.csproj", "{371EC37A-21B6-4300-BEFA-1F4DEB86A48E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionCalling", "..\FunctionCalling\FunctionCalling.csproj", "{9FC89E53-6FC4-494B-99CC-DC415CDC9140}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{371EC37A-21B6-4300-BEFA-1F4DEB86A48E}.Release|x64.Build.0 = Release|Any CPU
 		{371EC37A-21B6-4300-BEFA-1F4DEB86A48E}.Release|x86.ActiveCfg = Release|Any CPU
 		{371EC37A-21B6-4300-BEFA-1F4DEB86A48E}.Release|x86.Build.0 = Release|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Debug|x64.Build.0 = Debug|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Debug|x86.Build.0 = Debug|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Release|x64.ActiveCfg = Release|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Release|x64.Build.0 = Release|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FC89E53-6FC4-494B-99CC-DC415CDC9140}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
