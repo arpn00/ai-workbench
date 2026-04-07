@@ -34,8 +34,6 @@ public static class KernelFactory
         kernel.ImportPluginFromObject(new CurrencyConverterPlugin(), "CurrencyConverter");
         kernel.ImportPluginFromObject(new TravelPlannerPlugin(), "TravelPlanner");
 
-        // Register agents as callable kernel functions so the top-level LLM orchestrator
-        // can invoke them automatically through tool-calling (no manual orchestration code).
         var agent1 = new QueryProcessorAgent(kernel);
         var agent2 = new TravelPlannerAgent(kernel);
 

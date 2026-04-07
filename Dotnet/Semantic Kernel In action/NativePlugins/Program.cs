@@ -74,9 +74,7 @@ internal class Program
         bool isFeasible = verdict.StartsWith("FEASIBLE", StringComparison.OrdinalIgnoreCase);
 
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine(isFeasible
-            ? "[Step 2] Budget is feasible - generating itinerary..."
-            : "[Step 2] Budget not feasible - asking LLM for budget viability response...");
+
         Console.ResetColor();
         Console.WriteLine();
 
